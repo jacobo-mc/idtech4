@@ -1,0 +1,29 @@
+windowDef Desktop {
+   rect      0,0,640,480
+   backcolor 0, 0, 0, 0
+   nocursor  1
+   windowDef health {
+		rect		50,240,100,50
+		
+		windowDef healthtitle
+		{
+			rect		0,0,100,20
+			text		"Health"
+			textscale	0.6
+			shadow		1
+		}
+		
+		windowDef healthint
+		{
+			rect		0,15,100,40
+			text		"gui::player_health"
+			textscale	0.61
+			forecolor	1,1,1,1
+			shadow		1
+		}
+   }   
+   windowDef crosshair {
+		rect		319,239,3,2
+		backcolor	1,1,1,1
+	}
+}
