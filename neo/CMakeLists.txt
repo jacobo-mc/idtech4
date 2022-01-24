@@ -47,8 +47,7 @@ include(CheckCXXCompilerFlag)
 include(GNUInstallDirs OPTIONAL RESULT_VARIABLE GNUINSTALLDIRS)
 
 option(CORE			"Build the core" ON)
-option(BASE			"Build the base game code" ON)
-option(SABASE			"Build the standalone game code" OFF)
+option(SABASE			"Build the standalone game code" ON)
 if(MSVC)
 	option(TOOLS		"Build the tools game code (Visual Studio+SDL2 only)" ON)
 endif()
@@ -1140,47 +1139,19 @@ if(DEDICATED)
 	endif()
 endif()
 
-if(BASE)
+if(SABASE)
 	if (AROS)
-		add_executable(base sys/aros/dll/dllglue.c ${src_game})
-		set_target_properties(base PROPERTIES OUTPUT_NAME "base.aros-${AROS_ARCH}")
+		add_executable(sabase sys/aros/dll/dllglue.c ${src_game})
+		set_target_properties(sabase PROPERTIES OUTPUT_NAME "sabase.aros-${AROS_ARCH}")
 	else()
-		add_library(base SHARED ${src_game})
+		add_library(sabase SHARED ${src_game})
 	endif()
 	
 	source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX neo FILES ${src_game})
 	
-	set_target_properties(base PROPERTIES PREFIX "")
-	set_target_properties(base PROPERTIES COMPILE_DEFINITIONS "GAME_DLL")
-	target_include_directories(base PRIVATE "${CMAKE_SOURCE_DIR}/game")
-	set_target_properties(base PROPERTIES LINK_FLAGS "${ldflags}")
-	set_target_properties(base PROPERTIES INSTALL_NAME_DIR "@executable_path")
-	if (AROS)
-		target_link_libraries(base idlib dll)
-	else()
-		target_link_libraries(base idlib)
-	endif()
-
-	if(NOT APPLE AND NOT WIN32)
-		install(TARGETS base
-				RUNTIME DESTINATION "${bindir}"
-				LIBRARY DESTINATION "${libdir}"
-				ARCHIVE DESTINATION "${libdir}"
-		)
-	endif()
-endif()
-
-if(SABASE)
-	if (AROS)
-		add_executable(sabase sys/aros/dll/dllglue.c ${src_d3xp})
-		set_target_properties(sabase PROPERTIES OUTPUT_NAME "sabase.aros-${AROS_ARCH}")
-	else()
-		add_library(sabase SHARED ${src_d3xp})
-	endif()
-	source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX neo FILES ${src_d3xp})
 	set_target_properties(sabase PROPERTIES PREFIX "")
-	set_target_properties(sabase PROPERTIES COMPILE_DEFINITIONS "GAME_DLL;_D3XP;CTF")
-	target_include_directories(sabase PRIVATE "${CMAKE_SOURCE_DIR}/d3xp")
+	set_target_properties(sabase PROPERTIES COMPILE_DEFINITIONS "GAME_DLL")
+	target_include_directories(sabase PRIVATE "${CMAKE_SOURCE_DIR}/game")
 	set_target_properties(sabase PROPERTIES LINK_FLAGS "${ldflags}")
 	set_target_properties(sabase PROPERTIES INSTALL_NAME_DIR "@executable_path")
 	if (AROS)
@@ -1190,7 +1161,7 @@ if(SABASE)
 	endif()
 
 	if(NOT APPLE AND NOT WIN32)
-		install(TARGETS sabase
+		install(TARGETS base
 				RUNTIME DESTINATION "${bindir}"
 				LIBRARY DESTINATION "${libdir}"
 				ARCHIVE DESTINATION "${libdir}"
