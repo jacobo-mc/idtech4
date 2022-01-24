@@ -1762,7 +1762,7 @@ void idPlayer::Spawn( void ) {
 		if ( gameLocal.isMultiplayer ) {
 			hud = uiManager->FindGui( "guis/mphud.gui", true, false, true );
 		} else if ( spawnArgs.GetString( "hud", "", temp ) ) {
-			hud = uiManager->FindGui( temp, true, false, true );
+			hud = uiManager->FindGui( "guis/hud.gui", true, false, true );
 		}
 		if ( hud ) {
 			hud->Activate( true, gameLocal.time );
