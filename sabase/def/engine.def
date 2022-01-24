@@ -103,7 +103,25 @@ entityDef func_mover {
 	
 	"resetmover"				"0"
 }
+entityDef trigger_touch {
+	"editor_color"				".5 .5 .5"
+	"editor_mins"				"?"
+	"editor_maxs"				"?"
+	"editor_material"			"textures/common/trigmulti"
+	"editor_showangle"			"1"
 
+	"editor_usage"				"Continuously tests whether other entities are touching and calls a script" \
+								"function for any such entities." \
+								"Be carefull using this trigger because when active this trigger is fairly expensive."
+
+	"editor_var call"			"script function to call when an entity touches the trigger." \
+								"The script function should have a single entity as parameter."
+	"editor_bool start_on"		"if true the trigger starts on."
+
+	"spawnclass"				"idTrigger_Touch"
+
+	"start_on"					"0"
+}
 entityDef trigger_once {
 	"editor_color"				".5 .5 .5"
 	"editor_mins"				"?"
