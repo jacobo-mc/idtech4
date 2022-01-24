@@ -1,6 +1,10 @@
 windowDef Desktop {
-   rect      0, 0, 640, 480
-
-   backcolor 0, 0, 0, 0
+   rect      0,0,640,480
+   visible   1
    nocursor  1
+   windowDef test {
+      rect      10, 10, 100, 100
+      text      "gui::player_health"
+      font      "fonts/english"
+   }
 }
