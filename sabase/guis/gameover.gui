@@ -1,8 +1,10 @@
 windowDef Desktop {
-   rect      0, 0, 640, 480
-
-   backcolor 0, 0, 0, 0
-   nocursor  1
+   rect      0, 0, 640, 480 
+   backcolor 0, 1, 0, 1
+   onESC
+   {
+      set "cmd" "close" ;
+   }
    windowDef text
 	{
 		rect		0,100,640,33
