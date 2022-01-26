@@ -1,0 +1,18 @@
+{
+"mapspath" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\maps"
+"bsp" ""
+"bsp noflood" ""
+"bsp shadowOpt 2" ""
+"bsp noaas" ""
+"bspext" ""
+"bspext noflood" ""
+"autosave" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\autosave.map"
+"autosave1" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\autosave1.map"
+"autosave2" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\autosave2.map"
+"texturepath" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\textures"
+"entitypath" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase\def\*.def"
+"remotebasepath" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase"
+"rshcmd" ""
+"basepath" "C:\Users\25rogers.jacob\Downloads\protogamebuild\sabase"
+"brush_primit" "1"
+}

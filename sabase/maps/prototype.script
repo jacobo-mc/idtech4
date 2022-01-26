@@ -1,0 +1,29 @@
+void mover_init(){
+		$func_mover_1.time(5); // set the time how long the mover will need for moving
+		$func_mover_1.decelTime (0); // how long it will take to get full speed
+		$func_mover_1.accelTime (0); // how long it will take to make it stop
+		$func_mover_2.time(5); // set the time how long the mover will need for moving
+		$func_mover_2.decelTime (0); // how long it will take to get full speed
+		$func_mover_2.accelTime (0); // how long it will take to make it stop
+		$func_mover_3.time(5); // set the time how long the mover will need for moving
+		$func_mover_3.decelTime (0); // how long it will take to get full speed
+		$func_mover_3.accelTime (0); // how long it will take to make it stop
+}
+void mover_run(){
+	while(1){
+		$func_mover_1.move(DOWN,220); // sais where to move the mover to
+		$func_mover_2.move(DOWN,220); // sais where to move the mover to
+		$func_mover_3.move(UP,220); // sais where to move the mover to
+		sys.wait(10); // time to wait before the next action in seconds
+		$func_mover_1.move(UP,220); // sais where to move the mover to
+		$func_mover_2.move(UP,220); // sais where to move the mover to
+		$func_mover_3.move(DOWN,220); // sais where to move the mover to
+		sys.wait(10); // time to wait before the next action in seconds
+	}
+}
+void end_level(){
+	sys.trigger($target_endlevel_1);
+}
+void main(){
+	thread mover_run();
+}

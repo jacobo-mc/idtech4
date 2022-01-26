@@ -1,0 +1,19 @@
+entityDef func_animate
+{
+	"spawnclass"				"idAnimated"
+	"sound_bone"				"origin"
+	"notriggeronanim"			"1"
+}
+entityDef target_endLevel {
+	"editor_color"			"1 1 0"
+	"editor_mins"			"-8 -8 -8"
+	"editor_maxs"			"8 8 8"
+
+	"editor_usage"			"When triggered, displays end level gui and transfers the player to the next map.  Orient the entity to specify the view during the stats display."
+	"editor_var nextMap"	"the map name to transfer to (for example: johnc/test_box, etc)."
+	"editor_gui guiName"	"end of level gui."
+	"editor_var endOfGame"	"set to true if this is the end of the game"
+
+	"spawnclass"			"idTarget_EndLevel"
+	"nextMap"				"test1"
+}

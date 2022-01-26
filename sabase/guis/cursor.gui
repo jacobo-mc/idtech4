@@ -1,0 +1,10 @@
+windowDef Desktop {
+   rect      0, 0, 640, 480
+
+   backcolor 0, 0, 0, 0
+   nocursor  1
+   windowDef crosshair {
+		rect		319,239,3,2
+		backcolor	1,1,1,1
+	}
+}

@@ -1,0 +1,47 @@
+entityDef player_doommarine
+{
+	"spawnclass"   					"idPlayer"
+	"scriptobject" 					"player"
+  	"maxhealth"                             "100"
+	"health"                             "100"
+	"hud"								"guis/hud.gui"
+	"mphud"								"guis/mphud.gui"
+	"def_weapon0"					"weapon_unarmed" 
+	"weapon0_allowempty"			"1"
+	"weapon"						"weapon_unarmed"
+	"current_weapon"				"0"   
+}
+
+entityDef player_doommarine_mp
+{
+	"inherit" 						"player_doommarine"
+}
+entityDef damage_softfall {
+	"damage"						"10"
+	"kickDir"						"0 0 -1"
+	"noArmor"						"1"
+	"knockback"						"0"
+	"kick_time"						"100"
+	"kick_amplitude"				"1"
+	"no_sound"						"1"			// don't play default damage sound
+}
+
+entityDef damage_hardfall {
+	"damage"						"30"
+	"kickDir"						"0 0 -1"
+	"noArmor"						"1"
+	"knockback"						"0"
+	"kick_time"						"300"
+	"kick_amplitude"				"1"
+	"no_sound"						"1"			// don't play default damage sound
+}
+
+entityDef damage_fatalfall {
+	"damage"						"300"
+	"kickDir"						"0 0 -1"
+	"noArmor"						"1"
+	"knockback"						"0"
+	"kick_time"						"300"
+	"kick_amplitude"				"1"
+	"no_sound"						"1"			// don't play default damage sound
+}
